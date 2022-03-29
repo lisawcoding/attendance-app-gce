@@ -15,6 +15,7 @@ function LogIn({t, setIsForgotPW, props}) {
           e.preventDefault();
           console.log("on submit");
           btnRef.current.disabled=true;
+          console.log("loginURL: ", loginURL)
 
           var formData = new FormData(formRef.current);
           formData.forEach((value, key) => (formData[key] = value));

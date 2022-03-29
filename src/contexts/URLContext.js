@@ -4,8 +4,10 @@ export const URLContext = createContext();
 
 export function URLProvider(props) {
      // const authOrigin = `http://localhost:9002`;
-     const authOrigin = `http://localhost:8080/auth`;
-     const origin = "http://localhost:8080"
+     // const authOrigin = `http://localhost:8080/auth`;
+     // const origin = "http://localhost:8080"
+     const authOrigin = process.env.REACT_APP_AUTHORIGIN;
+     const origin = process.env.REACT_APP_ORIGIN;
 
      const registerURL = `${authOrigin}/register`;
      const emailTokenURL = `${authOrigin}/register/mail`
