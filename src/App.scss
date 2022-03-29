@@ -33,9 +33,9 @@ a {
 
 .App {
      display: flex;
-     width: 100vw;
+     // width: 100vw;
      height: 100vh;
-     overflow: hidden;
+     // overflow: hidden;
      & > nav + [id] {
           text-align: center;
           width: 100%;
@@ -210,9 +210,9 @@ input {
           .right-div {
                height: 100%;
           }
-          video {
-               min-width: unset !important;
-          }
+          // video {
+          //      min-width: unset !important;
+          // }
      }
 
 }
@@ -296,9 +296,9 @@ input {
                justify-content: center;
                margin: 1vw;
           }
-          * {
-               font-size: 2.5vw !important;
-          }
+          // * {
+          //      font-size: 2.5vw !important;
+          // }
           svg {
                font-size: 3.7vw !important;
           }
@@ -314,9 +314,9 @@ input {
           }
      }
 
-     video {
-          height: 100% !important;
-     }
+     // video {
+     //      height: 100% !important;
+     // }
 
      #CreateEmployee {
           .employeeForm {
@@ -334,10 +334,10 @@ input {
                form {
                     display: flex;
                     flex-direction: column;
-                    .img-wrapper, .info-div {
-                         box-shadow: var(--box-shadow);
-                         border-radius: 15px;                         
-                    }
+                    // .img-wrapper, .info-div {
+                    //      box-shadow: var(--box-shadow);
+                    //      border-radius: 15px;                         
+                    // }
                     .info-div {
                          background: #fff;
                          padding: 1.5rem;
@@ -401,8 +401,8 @@ input {
                } 
                .hamburger {
                     display: flex;
-                    width: 3.5rem;
-                    height: 3.5rem;
+                    width: 9vw;
+                    height: 9vw;
                     flex-direction: column;
                     justify-content: space-around;
                     margin-left: auto;
@@ -421,6 +421,36 @@ input {
                          display: grid !important;
                     }
                }      
+          }
+     }
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+     main:not(#Landing):not(#Records) {
+          *:not(.photo-icon) {
+               font-size: 1.25em !important;
+          }
+          .search-input svg {
+               font-size: 2em !important;
+          }          
+     }
+     #Home .top {
+          padding: .5em 1em !important;
+          h2 {
+               display: none;
+          }
+          img {
+               width:1.5rem;
+          }
+     }
+
+     #Punch {
+          .nav-div {
+               display: flex;
+               gap: 1.5em;
+               h2 {
+                    display: none;
+               }
           }
      }
 }

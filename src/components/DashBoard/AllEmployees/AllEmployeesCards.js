@@ -18,7 +18,7 @@ function AllEmployeesCards ({allEmployees, searchTerm}) {
             .map(elm => 
             <div id="AllEmpoyeeCards" className="card" key={elm._id}>
                 <div className="img-wrapper">
-                    {elm.image && elm.image.length > 0 ? <img src={elm.image} /> : <BiImageAlt />}
+                    {elm.image && elm.image.length > 0 ? <img src={elm.image} alt={elm.name} /> : <BiImageAlt className="photo-icon" />}
                 </div>
                 <h1>{elm.name}</h1>
                 <p>{elm._id}</p>

@@ -30,10 +30,10 @@ function Punch(props) {
                          <label htmlFor="option-2" className="option option-2"> out </label>
                     </div>
                     {thisUser.setting && <p> Office hours are {thisUser.setting.timeIn} to {thisUser.setting.timeOut} </p>}
-                    <div>
+                    <h1 className="nav-div">
                          <HomeLink />
                          <LogoutLink />                     
-                    </div>
+                    </h1>
                </section>
                <section className="right-div">
                     {console.log(allEmployees)}
