@@ -131,7 +131,7 @@ h1 {
 
 img[alt*="logo"] {
      width: 30px;
-     height: fit-content;
+     // height: fit-content;
 }
 
 .card {
@@ -440,7 +440,7 @@ input {
                display: none;
           }
           img {
-               width:1.5rem;
+               width:1.25em;
           }
      }
 
@@ -450,6 +450,13 @@ input {
                gap: 1.5em;
                h2 {
                     display: none;
+               }
+          }
+     }
+     #Punch {
+          .nav-div {
+               svg {
+                    font-size: 9vw;
                }
           }
      }

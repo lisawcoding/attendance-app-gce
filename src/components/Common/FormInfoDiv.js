@@ -3,7 +3,7 @@ import Input from "../Common/Input";
 export const FormInfoDiv = ({changeInput, thisEmployee, disabled}) => {
     return (
         <section className="info-div">
-            <Input label="name" type="text" name="name" handleChange={changeInput} defaultValue={thisEmployee.name} required disabled={disabled} autoFocus />
+            <Input label="name" type="text" name="name" handleChange={changeInput} defaultValue={thisEmployee.name} required disabled={disabled} />
             <Input label="title" type="text" name="title" handleChange={changeInput} defaultValue={thisEmployee.title} disabled={disabled} />
             <Input label="email" type="email" name="email" handleChange={changeInput} defaultValue={thisEmployee.email} required disabled={disabled} />
             <Input label="phone number" name="tel" type="tel" handleChange={changeInput} size="20" minLength="7" maxLength="14" defaultValue={thisEmployee.tel} disabled={disabled} />
