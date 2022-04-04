@@ -58,6 +58,25 @@ function CreateEmployee(props) {
                {isSuccessPopup && <SuccessPopup closePopup={()=>{setIsSuccessPopup(false)}} action="created" pathname="/employees" />}
                {isCamera && <FaceCamera thisEmployee={thisEmployee} setThisEmployee={setThisEmployee} />}
           </>
+
+          // <>
+          //      {isCamera ? <FaceCamera thisEmployee={thisEmployee} setThisEmployee={setThisEmployee}/>
+          //      :<div id="CreateEmployee" className="center">
+          //           <form onSubmit={submitForm} autoComplete="false" className="card employeeForm">
+          //                <section className="img-wrapper">
+          //                     {thisEmployee.image.length < 1 ? 
+          //                          <BiCamera className="BiCamera" onClick={clickCameraIcon} title="take a picture" />:
+          //                          <img src={thisEmployee.image} name="image" className="check" alt={thisEmployee.name} />
+          //                     }
+          //                </section>
+          //                <FormInfoDiv changeInput={changeInput} thisEmployee={thisEmployee} />
+          //           </form>
+          //      </div>
+          //      }
+
+          //      {isSuccessPopup && <SuccessPopup closePopup={()=>{setIsSuccessPopup(false)}} action="created" pathname="/employees" />}
+               
+          // </>
      );
 }
 

@@ -23,13 +23,16 @@ function Punch(props) {
           <div id="Punch">
                <section className="left-div">
                     <Timer />
-                    <div className="wrapper">
-                         <input type="radio" name="status" id="option-1" onClick={clickClockInOutBtn} value="in" defaultChecked="checked" />
-                         <input type="radio" name="status" id="option-2" onClick={clickClockInOutBtn} value="out" />
-                         <label htmlFor="option-1" className="option option-1"> in </label>
-                         <label htmlFor="option-2" className="option option-2"> out </label>
+                    <div className="radio-div">
+                         <div className="wrapper">
+                              <input type="radio" name="status" id="option-1" onClick={clickClockInOutBtn} value="in" defaultChecked="checked" />
+                              <input type="radio" name="status" id="option-2" onClick={clickClockInOutBtn} value="out" />
+                              <label htmlFor="option-1" className="option option-1"> in </label>
+                              <label htmlFor="option-2" className="option option-2"> out </label>
+                         </div>
+                         {thisUser.setting && <p> Office hours are {thisUser.setting.timeIn} to {thisUser.setting.timeOut} </p>}                         
                     </div>
-                    {thisUser.setting && <p> Office hours are {thisUser.setting.timeIn} to {thisUser.setting.timeOut} </p>}
+
                     <h1 className="nav-div">
                          <HomeLink />
                          <LogoutLink />                     

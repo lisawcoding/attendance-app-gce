@@ -34,7 +34,7 @@ a {
 .App {
      display: flex;
      // width: 100vw;
-     height: 100vh;
+     min-height: 100vh;
      // overflow: hidden;
      & > nav + [id] {
           text-align: center;
@@ -239,6 +239,20 @@ input {
      #EachEmployee {
           justify-content: unset;
      }
+          #Punch {
+          .nav-div {
+               display: flex;
+               gap: 1.5em;
+               width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+               h2 {
+                    display: none;
+               }
+          }
+     }
 
 }
 
@@ -432,7 +446,10 @@ input {
           }
           .search-input svg {
                font-size: 2em !important;
-          }          
+          }     
+          footer.bottom p {
+               font-size: .9em !important;
+          }     
      }
      #Home .top {
           padding: .5em 1em !important;
@@ -446,11 +463,17 @@ input {
 
      #Punch {
           .nav-div {
-               display: flex;
-               gap: 1.5em;
-               h2 {
-                    display: none;
-               }
+//                background-color: navy;
+//                display: flex;
+//                gap: 1.5em;
+//                width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//     flex-wrap: wrap;
+               // h2 {
+               //      display: none;
+               // }
           }
      }
      #Punch {
@@ -459,5 +482,38 @@ input {
                     font-size: 9vw;
                }
           }
+     }
+     .video-box.create {
+          #video {
+               width: 100%;
+               height: 100%;
+               background: transparent;
+          }
+     }
+
+     #Records {
+          .table-body {
+               overflow: unset;
+        .table-row {
+             align-items: center;
+          input::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+               -webkit-appearance: none !important;
+               margin: 0 !important;
+           }
+           
+           input {
+               -moz-appearance:textfield !important;
+           }
+        .btn-div {
+          flex-direction: column;
+          justify-content: center;
+          svg {
+               margin: .15em !important;
+          }
+     }  
+        }                
+          }
+
+
      }
 }

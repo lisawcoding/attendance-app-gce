@@ -6,8 +6,6 @@ import "./Home.scss";
 import { LogoutLink } from "../Common/IconLinks";
 
 function Home() {
-     
-     
      return (
           <main id="Home">
                <section className="top">
@@ -29,9 +27,9 @@ function Home() {
                          </NavLink>
                     </div>
                </section>
-               <section className="bottom">
+               <footer className="bottom">
                     <p>Copyright © 2010-2021 tolisacoding All rights reserved.</p>
-               </section>
+               </footer>
           </main>
      );
 }

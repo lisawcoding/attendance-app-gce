@@ -88,14 +88,21 @@ const FaceCamera = ({thisEmployee, setThisEmployee}) => {
           setIsPlay(false);
      };
 
+     const btnSize = {
+          maxWidth: cameraSize.width,
+          maxHeight: cameraSize.height,
+          width: "100%",
+          height: "100%",
+     }
+
      return (
-          <section className="video-box" onPlay={onPlay} style={{display: isConfirm? "none" : ""}}>
+          <section className="video-box create" onPlay={onPlay} style={{display: isConfirm? "none" : ""}}>
                <video id="video" autoPlay muted ref={videoRef} className="video-frame"></video>
                <canvas ref={canvasRef} width={cameraSize.width} height={cameraSize.height}></canvas>
                {isPause && (
                     <>
                          {/* <img src={thisEmployee.image} style={cameraSize} /> */}
-                         <div className="btn-div" style={cameraSize}>
+                         <div className="btn-div" style={btnSize}>
                               <GiConfirmed className="green" onClick={stopVideo} title="save this image" />
                               <GiCancel onClick={onPlay} className="red" title="cancel this image and take a picture again" />
                          </div>
