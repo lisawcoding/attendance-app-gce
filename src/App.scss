@@ -391,28 +391,23 @@ input {
                .link-div {
                     height: unset;
                }
-
                .link-div {
                     display: none;
                     padding: 1em;
 
                     a {
-                         position: relative;
-
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
                          &:hover {
                               background-color: transparent !important;
                          }
 
                          >div {
-                              position: absolute;
-                              top: 0;
                               width: 120px;
                               height: 120px;
                               border-radius: 50%;
                               background: var(--pink);
-                              display: flex;
-                              flex-direction: column;
-                              align-items: center;
                               justify-content: center;
                          }
                     }
