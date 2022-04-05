@@ -28,7 +28,7 @@ function AllEmployees () {
                     </section>    
                     {allEmployees && (allEmployees.length<1 ? 
                          <h1 className="center">no employees<CreateEmployeeLink/></h1> : 
-                         <AllEmployeesCards allEmployees={allEmployees} searchTerm={searchTerm} />)}  
+                         <AllEmployeesCards allEmployees={allEmployees} searchTerm={searchTerm.toLowerCase()} />)}  
                </main>          
           }          
           </>
