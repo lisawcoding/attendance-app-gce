@@ -25,6 +25,15 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        svg {
+            width: 5em;
+            height: 5em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            fill: var(--dark-grey);
+        }
     }
     .table {
         display: grid;
