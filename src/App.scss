@@ -356,6 +356,9 @@ input {
 
                     svg {
                          font-size: 3.1rem !important;
+                         &:hover {
+                              fill: var(--dark-grey);
+                         }
                     }
                }
 
@@ -379,14 +382,11 @@ input {
           &>[id] {
                margin-top: 5rem;
           }
-
           nav {
                height: 3.5em;
-
                &+[id] {
                     padding-top: 5em !important;
                }
-
                .hamburger,
                .link-div {
                     height: unset;
@@ -433,15 +433,19 @@ input {
                }
 
                &.drop-down {
-                    height: 100vh;
+                    min-height: 100vh;
                     flex-direction: column;
                     position: absolute;
                     width: 100%;
-                    // background-color: rgba(0, 0, 0, 0.59);
                     background-color: var(--blue);
+                    padding: unset;
+                    .hamburger {
+                         margin-top: 0.5em;
+                         margin-right: 0.5em;
+                    }
                     .link-div {
                          display: grid !important;
-
+                         background-color: var(--blue);
                          a {
                               &>div {
                                    box-shadow: var(--box-shadow);
@@ -454,6 +458,13 @@ input {
 }
 
 @media (max-width: 500px) and (orientation: portrait) {
+     .App {
+          nav {
+               h2 {
+                    font-size: 2em;
+               }
+          }
+     }
      main:not(#Landing):not(#Records) {
           *:not(.photo-icon) {
                font-size: 1.25em !important;
@@ -496,8 +507,57 @@ input {
      }
 
      #Records {
+          .table-head {
+               .table-row {
+                    display: none;
+               }
+          }
           .table-body {
                overflow-y: unset !important;
+               form {
+                    border-bottom: 2px solid var(--pink);
+                    padding: .15em;
+                    &:last-child {
+                         border-bottom: none;
+                    }
+                    fieldset {
+                         display: grid;
+                         grid-template-columns: 1.5fr 2fr 1fr;
+                         grid-template-rows: 1fr 1fr;
+                         label {
+                              width: 100%;
+                              display: flex;
+                              justify-content: flex-start;
+                              padding: 0;
+                              align-items: center;
+                         }
+                         label:nth-of-type(2):before {
+                              content: "clork in";
+                              width: 50%;
+                              text-align: right;
+                         }
+                         label:nth-of-type(3):before {
+                              content: "clork out";
+                              width: 50%;
+                              text-align: right;
+                         }
+                         label:nth-of-type(1) {
+                              grid-column: 1/2;
+                              grid-row: 1/3;
+                         }
+                         label:nth-of-type(2), label:nth-of-type(3) {
+                              // grid-column: 1/2;
+                         }
+
+                         .btn-div {
+                              grid-column: 3/4;
+                              grid-row: 1/4;
+                              width: 100%;
+                              height: 100%;
+                              padding: 0;
+                         }
+                    }                    
+               }
 
                .table-row {
                     align-items: center;
