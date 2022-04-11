@@ -7,8 +7,8 @@
      --red: #cc0000;
      --black: #010203;
      --m-width: "900px";
-     --box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
-     --box-shadow-bottom: 0 1px 10px rgb(32 33 36 / 28%);
+     --box-shadow: 0 1px 6px var(--dark-grey);
+     --box-shadow-bottom: 0 1px 10px var(--dark-grey);
      --dashboard_navHeight: 2.5em;
      --icon-size: 2rem;
 }

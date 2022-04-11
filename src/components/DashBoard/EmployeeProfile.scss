@@ -11,7 +11,7 @@
      }
      .top-div {
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
           svg {
                transform: scale(1.2);
                font-size: var(--icon-size);
