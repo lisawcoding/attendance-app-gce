@@ -29,7 +29,7 @@ function Landing(props) {
 
      const googleFailure = (err) => {
           console.log("google failure: ", err)
-          err.details && setAlert([...alert, err.details])
+          // err.details && setAlert([...alert, err.details])
      }
 
      return (
