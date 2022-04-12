@@ -42,6 +42,7 @@ function EmployeeRecords_table ({props}) {
     }
 
     const clickEditIcon = id => {
+        console.log("click Edit Icon ", id)
         id!=editItem ? setEditItem(id) : setEditItem(null)
         editItem!=null && refs.current[editItem].reset()
         setInputValues(null)
@@ -107,7 +108,7 @@ function EmployeeRecords_table ({props}) {
     return (
         <section className="table">
             <div className="table-head" >
-                <label> search: 
+                <label className="search-div"> search: 
                     <input type="month" name="date" value={searchMonth} onChange={changeSearchInput} />
                 </label>
                 <div className="table-row">
@@ -122,15 +123,15 @@ function EmployeeRecords_table ({props}) {
                         <div  className="table-body">
                             { records.map( record => 
                                 <form onSubmit={(e)=>{updateRecord(e, record._id)}} key={record._id} ref={elm=>refs.current[record._id]=elm} >
-                                    <fieldset disabled={ editItem !== record._id } className="table-row" >
+                                    <fieldset className={`table-row ${editItem == record._id}`} >
                                         <label>
-                                            <input type="date" name="date" defaultValue={record.date} onChange={ onChange } />
+                                            <input type="date" name="date" defaultValue={record.date} onChange={ onChange } disabled={ editItem !== record._id }/>
                                         </label>
                                         <label>
-                                            <input type="time" name="in" defaultValue={record.in} onChange={ onChange } step="1" />
+                                            <input type="time" name="in" defaultValue={record.in} onChange={ onChange } step="1" disabled={ editItem !== record._id }/>
                                         </label>
                                         <label>
-                                            <input type="time" name="out" defaultValue={record.out} onChange={ onChange } step="1" />
+                                            <input type="time" name="out" defaultValue={record.out} onChange={ onChange } step="1" disabled={ editItem !== record._id }/>
                                         </label>
                                         <div className="btn-div">
                                             {editItem == record._id && inputValues!= null && <button title="confirm"><GrUpdate/></button>}
