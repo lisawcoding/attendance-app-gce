@@ -46,7 +46,7 @@
         box-shadow: var(--box-shadow);
         display: flex;
         flex-direction: column;
-        padding-top: 1em;
+        padding: 1em 0;
         label {
             input {
                 margin-left: .5em;
@@ -56,40 +56,54 @@
         * {
             text-transform: capitalize;
         }
+        .table-row {
+            div {
+                display: flex;
+                justify-content: center;
+            }
+        }
     }
     .table-body {
         overflow-y: scroll;
+        form {
+            padding: .5em 0;
+        }
     }
     .table-row {
-        padding: 0;
+        // padding: 0;
         display: flex;
         justify-content: space-around;
         border: none;
-        margin: 0;
+        margin: 1.5px 0;
+        &.true {
+            box-shadow: var(--box-shadow);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        & {
+            > * {
+                width: 100%;
+            }
+        }
         label, input, p {
-            text-align: center;
-            height: 100%;
+            // text-align: center;
+            // height: 100%;
             background-color: transparent !important;
-            margin: 0;
         }
         p, label {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: .5em 0;
-        }
-        input {
+            // width: 100%;
             // display: flex;
             // justify-content: center;
-            // align-items: center;
+        }
+        input {
             border: 0 !important;
-            // width: 100%;
         }
         .btn-div {
-            display: flex;
-            padding: 0 1.5em;
-            width: fit-content;
-            align-items: center;
+            // display: flex;
+            // padding: 0 1.5em;
+            // width: fit-content;
+            // align-items: center;
             svg {
                 font-size: 1.2em;
             }

@@ -112,9 +112,9 @@ function EmployeeRecords_table ({props}) {
                     <input type="month" name="date" value={searchMonth} onChange={changeSearchInput} />
                 </label>
                 <div className="table-row">
-                    <p>date</p>
-                    <p>time in</p>
-                    <p>time out</p>
+                    <div>date</div>
+                    <div>time in</div>
+                    <div>time out</div>
                     <div className="btn-div">actions</div>
                 </div>
             </div>
@@ -122,23 +122,21 @@ function EmployeeRecords_table ({props}) {
                     <>
                         <div  className="table-body">
                             { records.map( record => 
-                                <form onSubmit={(e)=>{updateRecord(e, record._id)}} key={record._id} ref={elm=>refs.current[record._id]=elm} >
-                                    <fieldset className={`table-row ${editItem == record._id}`} >
-                                        <label>
-                                            <input type="date" name="date" defaultValue={record.date} onChange={ onChange } disabled={ editItem !== record._id }/>
-                                        </label>
-                                        <label>
-                                            <input type="time" name="in" defaultValue={record.in} onChange={ onChange } step="1" disabled={ editItem !== record._id }/>
-                                        </label>
-                                        <label>
-                                            <input type="time" name="out" defaultValue={record.out} onChange={ onChange } step="1" disabled={ editItem !== record._id }/>
-                                        </label>
-                                        <div className="btn-div">
-                                            {editItem == record._id && inputValues!= null && <button title="confirm"><GrUpdate/></button>}
-                                            <AiOutlineEdit onClick={()=>{clickEditIcon(record._id)}} className="edit-btn" title="edit item" />
-                                            <AiOutlineDelete onClick={()=>{clickDelIcon(record._id)}} title="delete item"/>
-                                        </div>
-                                    </fieldset>
+                                <form onSubmit={(e)=>{updateRecord(e, record._id)}} key={record._id} ref={elm=>refs.current[record._id]=elm} className={`table-row ${editItem == record._id}`} >
+                                    <label>
+                                        <input type="date" name="date" defaultValue={record.date} onChange={ onChange } disabled={ editItem !== record._id }/>
+                                    </label>
+                                    <label>
+                                        <input type="time" name="in" defaultValue={record.in} onChange={ onChange } step="1" disabled={ editItem !== record._id }/>
+                                    </label>
+                                    <label>
+                                        <input type="time" name="out" defaultValue={record.out} onChange={ onChange } step="1" disabled={ editItem !== record._id }/>
+                                    </label>
+                                    <div className="btn-div">
+                                        {editItem == record._id && inputValues!= null && <button title="confirm"><GrUpdate/></button>}
+                                        <AiOutlineEdit onClick={()=>{clickEditIcon(record._id)}} className="edit-btn" title="edit item" />
+                                        <AiOutlineDelete onClick={()=>{clickDelIcon(record._id)}} title="delete item"/>
+                                    </div>
                                 </form>
                             )}                            
                         </div>
