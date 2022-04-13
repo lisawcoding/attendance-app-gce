@@ -70,7 +70,6 @@
         }
     }
     .table-row {
-        // padding: 0;
         display: flex;
         justify-content: space-around;
         border: none;
@@ -87,23 +86,12 @@
             }
         }
         label, input, p {
-            // text-align: center;
-            // height: 100%;
             background-color: transparent !important;
-        }
-        p, label {
-            // width: 100%;
-            // display: flex;
-            // justify-content: center;
         }
         input {
             border: 0 !important;
         }
         .btn-div {
-            // display: flex;
-            // padding: 0 1.5em;
-            // width: fit-content;
-            // align-items: center;
             svg {
                 font-size: 1.2em;
             }
@@ -116,22 +104,6 @@
             }
         }
     }
-
-    // .table-body {
-    //     fieldset:not([disabled]) {
-    //         background: var(--m-grey);
-    //         background: PINK;
-    //         input::-webkit-calendar-picker-indicator {
-    //             display: block;
-    //         }
-    //     }    
-        // input::-webkit-calendar-picker-indicator {
-        //     display: none;
-        //   }      
-    //     form:nth-of-type(even) {
-    //         background: var(--light-grey)
-    //     }
-    // }
 
     .table-body {
         form:nth-of-type(even) {

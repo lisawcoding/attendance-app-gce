@@ -506,85 +506,60 @@ input {
           }
      }
 
-     // #Records {
-     //      .table-head {
-     //           .table-row {
-     //                display: none;
-     //           }
-     //      }
-     //      .table-body {
-     //           overflow-y: unset !important;
-     //           form {
-     //                border-bottom: 2px solid var(--pink);
-     //                padding: .15em;
-     //                &:last-child {
-     //                     border-bottom: none;
-     //                }
-     //                fieldset {
-     //                     display: grid;
-     //                     grid-template-columns: 1.5fr 2fr 1fr;
-     //                     grid-template-rows: 1fr 1fr;
-     //                     label {
-     //                          width: 100%;
-     //                          display: flex;
-     //                          justify-content: flex-start;
-     //                          padding: 0;
-     //                          align-items: center;
-     //                     }
-     //                     label:nth-of-type(2):before {
-     //                          content: "clork in";
-     //                          width: 50%;
-     //                          text-align: right;
-     //                     }
-     //                     label:nth-of-type(3):before {
-     //                          content: "clork out";
-     //                          width: 50%;
-     //                          text-align: right;
-     //                     }
-     //                     label:nth-of-type(1) {
-     //                          grid-column: 1/2;
-     //                          grid-row: 1/3;
-     //                     }
-     //                     label:nth-of-type(2), label:nth-of-type(3) {
-     //                          // grid-column: 1/2;
-     //                     }
+     #Records {
+          .table-head {
+               .table-row {
+                    display: none;
+               }
+          }
+          .table-body {
+               overflow-y: unset !important;
+               form {
+                    border-bottom: 2px solid var(--pink);
+                    padding: .15em;
 
-     //                     .btn-div {
-     //                          grid-column: 3/4;
-     //                          grid-row: 1/4;
-     //                          width: 100%;
-     //                          height: 100%;
-     //                          padding: 0;
-     //                     }
-     //                }                    
-     //           }
-
-     //           .table-row {
-     //                align-items: center;
-
-     //                input::-webkit-inner-spin-button,
-     //                .no-spin::-webkit-outer-spin-button {
-     //                     -webkit-appearance: none !important;
-     //                     margin: 0 !important;
-     //                }
-
-     //                input {
-     //                     -moz-appearance: textfield !important;
-     //                }
-
-     //                .btn-div {
-     //                     flex-direction: column;
-     //                     justify-content: center;
-
-     //                     svg {
-     //                          margin: .15em !important;
-     //                     }
-     //                }
-     //           }
-     //      }
-
-
-     // }
+                    display: grid;
+                    grid-template-columns: 1.5fr 2fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    &:last-child {
+                         border-bottom: none;
+                    }
+                         label {
+                              width: 100%;
+                              display: flex;
+                              padding: 0;
+                              align-items: center;
+                         }
+                         label:nth-of-type(2):before {
+                              content: "clork in";
+                              width: 50%;
+                              text-align: right;
+                              margin-left: -2.5em;
+                         }
+                         label:nth-of-type(3):before {
+                              content: "clork out";
+                              width: 50%;
+                              text-align: right;
+                              margin-left: -2.5em;
+                         }
+                         label:nth-of-type(1) {
+                              grid-column: 1/2;
+                              grid-row: 1/3;
+                         }
+                         .btn-div {
+                              grid-column: 3/4;
+                              grid-row: 1/4;
+                              justify-content: center;
+                              display: flex;
+                              align-items: center;
+                              svg {
+                                   margin: .15em !important;
+                                   font-size: 1.5em;
+                              }
+                         }              
+               }
+          }
+     }
 
      #User {
           section {
