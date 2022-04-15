@@ -51,7 +51,6 @@ function SignUp({setIsLoginTab, t}) {
 
      const emailToken = (data) => {
           console.log(data)
-          console.log(emailTokenURL)
           fetch(emailTokenURL, {
                method: "POST",
                headers: {
