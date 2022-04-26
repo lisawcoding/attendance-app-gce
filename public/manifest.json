@@ -1,11 +1,11 @@
 {
-  "short_name": "Attendance App",
-  "name": "Attendence App",
+  "short_name": "AttendanceApp",
+  "name": "face recognition attendance system App",
   "icons": [
     {
-        "src": "/imgs/logo-64.png",
-        "type": "image/png",
-        "sizes": "64x64"
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
     },
     {
       "src": "/imgs/logo-192.png",
