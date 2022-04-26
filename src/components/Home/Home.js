@@ -17,13 +17,13 @@ function Home() {
                </section>
                <section className="main">
                     <div className="clockIn" style={{backgroundImage: `url(${clork})`}}>
-                         <NavLink exact to="/punch" activeClassName="nav-active" title="employees' clock in/out Plateform">
-                              go to clockIn desk
+                         <NavLink exact to="/punch" activeClassName="nav-active" title="system for employees clock in/clock out">
+                              Clock In/Clock Out
                          </NavLink>
                     </div>
-                    <div className="dashboard" style={{backgroundImage: `url(${dashboard})`}} title="employeer's dashboard" >
+                    <div className="dashboard" style={{backgroundImage: `url(${dashboard})`}} title="dashboard for tracking attendance records and create employee's profile" >
                          <NavLink exact to="/employees" activeClassName="nav-active">
-                              go to dashboard
+                              tracking dashboard
                          </NavLink>
                     </div>
                </section>
