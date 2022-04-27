@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink } from "react-router-dom";
 import { BiHome } from "react-icons/bi";
 import { RiTeamLine } from "react-icons/ri";
@@ -6,6 +6,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { HiUserCircle } from "react-icons/hi";
 import Logout from "../Common/Logout";
 import "./IconLink.scss";
+import { FunctionContext } from '../../contexts/FunctionContext';
 
 export const HomeLink = () => {
   return (
@@ -51,9 +52,11 @@ export const UserLink = () => {
 }
 
 export const LogoutLink= () => {
+  const { logout } = useContext(FunctionContext)
+  const clickLogoutBtn = () => logout()
 
   return(
-    <NavLink to="/">
+    <NavLink to="/" onClick={clickLogoutBtn}>
       <div>
         <Logout />
         <h2>logout</h2>        
