@@ -48,7 +48,10 @@ function EmployeeProfile(props) {
                     fetchUser()
                }
           })
-          .catch((err) => console.error(err));
+          .catch((err) => {
+               console.error(err);
+               props.history.push("/")
+          });
      };
 
      const deleteEmployee = () => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.scss";
@@ -12,22 +12,25 @@ import CreateEmployee from "./components/DashBoard/CreateEmployee";
 import User from "./components/DashBoard/User";
 import EmployeeRecords from "./components/DashBoard/EmployeeRecords/EmployeeRecords";
 import NotFound from "./components/Common/NotFound";
+import { Redirect } from "react-router-dom";
 
 
 function App(props) {
-     const DashBoardNav = ({ exact, path, component: Component, ...rest }) => {
+
+     const ProtectedRoute = ({ exact, path, component: Component, ...rest }) => {
+          const [ user, setUser ] = useState(sessionStorage.getItem("accessToken"))
+
           return (
                <Route
                     // exact
                     // path={path}
                     {...rest}
-                    render={(routeProps) => (
+                    render={(routeProps) => 
+                         !user ? <Redirect to={{pathname: "/"}} />:
                          <>
-                              <Navbar {...routeProps} />
+                              {( path !=="/home" && path!=="/punch" ) && <Navbar {...routeProps} />}
                               <Component {...routeProps} />
-                         </>
-                    )}
-               />
+                         </> } />
           );
      };
 
@@ -36,15 +39,16 @@ function App(props) {
                <Router>
                     <Switch>
                          <Route exact path="/" component={Landing} />
-                         <Route exact path="/home" component={Home} />
-                         <DashBoardNav exact path="/user" component={User} />
-                         <DashBoardNav exact path="/employees" component={(props) => <AllEmployees {...props} />} />
-                         <DashBoardNav exact path="/employee/create" component={(props) => <CreateEmployee {...props} />} />
-                         <DashBoardNav exact path="/employee/profile/:id" component={EmployeeProfile} />
-                         <DashBoardNav exact path="/employee/records/:id" component={EmployeeRecords} />
-                         <Route exact path="/punch" component={Punch} />
+                         <ProtectedRoute exact path="/home" component={Home} />
+                         <ProtectedRoute exact path="/user" component={User} />
+                         <ProtectedRoute exact path="/employees" component={(props) => <AllEmployees {...props} />} />
+                         <ProtectedRoute exact path="/employee/create" component={(props) => <CreateEmployee {...props} />} />
+                         <ProtectedRoute exact path="/employee/profile/:id" component={EmployeeProfile} />
+                         <ProtectedRoute exact path="/employee/records/:id" component={EmployeeRecords} />
+                         <ProtectedRoute exact path="/punch" component={Punch} />
                          <Route path="" component={NotFound} />
                     </Switch>
+                    
                </Router>
           </div>
      );
