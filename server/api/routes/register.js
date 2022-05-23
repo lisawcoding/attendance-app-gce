@@ -2,19 +2,17 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
-const jwt = require("jsonwebtoken");
-const { signAccessToken, signRefreshToken, verifyAccessToken } = require("../../JWT");
+const { signAccessToken, verifyAccessToken } = require("../../JWT");
 
-// const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const GOOGLE_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI;
 const GOOGLE_REFRESH_TOKEN = process.env.GOOGLE_REFRESH_TOKEN;
+const GOOGLE_USER = process.env.GOOGLE_MAIL_USER;
 
 const oAuth2Client = new google.auth.OAuth2(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URI);
 oAuth2Client.setCredentials({ refresh_token: GOOGLE_REFRESH_TOKEN });
-
-router.get("/", (req, res) => res.send("mail"));
 
 router.post("/assignToken", (req, res) => {
      console.log("req body: ", req.body);
@@ -23,7 +21,6 @@ router.post("/assignToken", (req, res) => {
 })
 
 router.post("/mail", async (req, res) => {
-     console.log("req.body: ", req.body);
 
      const jwtToken = signAccessToken({ email: req.body.email });
      const accessToken = await oAuth2Client.getAccessToken();
@@ -31,7 +28,7 @@ router.post("/mail", async (req, res) => {
           service: "gmail",
           auth: {
                type: "OAuth2",
-               user: process.env.GOOGLE_MAIL_USER,
+               user: GOOGLE_USER,
                clientId: GOOGLE_CLIENT_ID,
                clientSecret: GOOGLE_CLIENT_SECRET,
                refreshToken: GOOGLE_REFRESH_TOKEN,
@@ -39,27 +36,16 @@ router.post("/mail", async (req, res) => {
           },
      });
 
-     // return res.json(jwtToken)
-
-     // var transporter = nodemailer.createTransport({
-     //      service: "hotmail",
-     //      auth: {
-     //           user: "tolisacoding@hotmail.com",
-     //           pass: process.env.HOTMAIL_PW,
-     //      },
-     // });
-
      const mailOptions = {
-          from: "Attendance APP <sulinwood@gmail.com>",
+          from: `Attendance APP <${GOOGLE_USER}>`,
           to: req.body.email,
-          subject: "Attendance APP - token",
+          subject: "hello from Attendance APP",
           text: `hello ${req.body.name}, please copy and past the below token: </h1><p>${jwtToken}`,
           html: `<h1>hello <span>${req.body.name}</span></h1>
         <h1>please copy and past the below token: </h1><p>${jwtToken}</p>`,
      };
 
      transporter.sendMail(mailOptions, function (error, user) {
-          console.log(mailOptions)
           if (error) {
                res.json({error: error})
           } else {
