@@ -1,10 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 import "./AllEmployees.scss";
 import { DataContext } from "../../../contexts/DataContext";
-import { BiSearchAlt } from "react-icons/bi";
 import AllEmployeesCards from "./AllEmployeesCards";
 import Loader from "../../Common/Loader";
 import { CreateEmployeeLink } from "../../Common/IconLinks";
+import SearchDiv from "./SearchDiv";
 
 function AllEmployees () {
      const { allEmployees, isLoading, setIsLoading } = useContext(DataContext);
@@ -20,12 +20,7 @@ function AllEmployees () {
           <>
           { isLoading ? <Loader /> : 
                <main id="AllEmployees">
-                    <section className="top-div">
-                         <div className="search-input">
-                              <input type="text" onChange={changeSearchInput} value={searchTerm} placeholder="name..." />
-                              <BiSearchAlt />
-                         </div>
-                    </section>    
+                    <SearchDiv changeSearchInput={changeSearchInput} searchTerm={searchTerm} />
                     {allEmployees && (allEmployees.length<1 ? 
                          <h1 className="center">no employees<CreateEmployeeLink/></h1> : 
                          <AllEmployeesCards allEmployees={allEmployees} searchTerm={searchTerm.toLowerCase()} />)}  
