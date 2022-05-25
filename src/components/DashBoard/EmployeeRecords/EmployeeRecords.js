@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import { BiImageAlt } from "react-icons/bi";
 import "./EmployeeRecords.scss";
 import EmployeeRecords_table from "./EmployeeRecords_table";
 
 function EmployeeRecords(props) {
-
+    
      return (
          <main id="Records">
+             {props.location.state == undefined && props.history.goBack()}
                 <section className="img-div">
                     <div className="employee-img-wrapper">
                         {

@@ -76,6 +76,7 @@ function EmployeeProfile(props) {
 
      return (
           <div id="EmployeeProfile" className="center">
+               {props.location.state == undefined && props.history.goBack()}
                <div className="card">
                     <section className="top-div">
                          <AiOutlineEdit onClick={() => {setIsEdit(!isEdit)}} className={ isEdit ? "click-icon" : null } title="edit profile"/>
